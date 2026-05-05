@@ -38,10 +38,21 @@
         
         .text {
             color: white;
-            font-size: 48px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: normal; /* Avenir Regular를 사용하기 위해 bold를 normal로 변경 */
+            font-family: "Georgia light", "Georgia", -apple-system, serif; /* 폰트 설정 추가 */
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
     </style>
 </head>
@@ -49,7 +60,7 @@
     <video autoplay muted loop>
         <source src="formde.mp4" type="video/mp4">
     </video>
-    
-
-</body>
+    <div class="content">
+        <div class="text">Forme d'Expression Online is coming soon.</div>
+    </div>
 </html>
