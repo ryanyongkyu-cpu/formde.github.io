@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Video Background</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .text {
+            color: white;
+            font-size: 24px;
+            font-weight: normal;
+            font-family: "Georgia light", "Georgia", -apple-system, serif;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(80, 80, 80, 0.5);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* 데스크탑 푸터 */
+        .footer-right {
+            position: fixed;
+            bottom: 20px;
+            right: 40px;
+            color: rgba(200, 200, 200, 0.8);
+            font-family: "Palatino Linotype", "Palatino", "Book Antiqua", serif;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: left;
+            text-shadow: 2px 2px 4px rgba(80, 80, 80, 0.7);
+            z-index: 2;
+            line-height: 1.2;
+        }
+
+        .footer-left {
+            position: fixed;
+            bottom: 20px;
+            left: 50px;
+            color: rgba(200, 200, 200, 0.9);
+            font-family: "Palatino Linotype", "Palatino", "Book Antiqua", serif;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: left;
+            text-shadow: 2px 2px 4px rgba(80, 80, 80, 0.7);
+            z-index: 2;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* 모바일 통합 푸터 */
+        .footer-mobile {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .footer-right,
+            .footer-left {
+                display: none;
+            }
+
+            .footer-mobile {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                color: rgba(200, 200, 200, 0.9);
+                font-family: "Palatino Linotype", "Palatino", "Book Antiqua", serif;
+                font-size: 11px;
+                font-weight: 300;
+                text-align: center;
+                text-shadow: 2px 2px 4px rgba(80, 80, 80, 0.7);
+                z-index: 2;
+                line-height: 1.6;
+                padding: 12px 20px;
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            .footer-mobile a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop playsinline>
+        <source src="Encode_loop_wA.mp4" type="video/mp4">
+    </video>
+
+    <!-- 데스크탑 푸터 -->
+    <div class="footer-right">
+        <span style="font-size: 13px;">FACTORY OF FAITH SRL<br>
+        P.IVA & C.F. IT02470851201</span><br>
+        Sede Legale : Via A. Costa 228, 40134 Bologna BO Italy<br>
+        Iscritta al registro delle Imprese di Bologna<br>
+        Iscrizione n. 02470851201
+    </div>
+    <div class="footer-left">
+        <a href="https://www.instagram.com/formedexpression/" target="_blank" style="color: inherit; text-decoration: none;">
+            <i class="fa-brands fa-instagram" style="font-size: 35px;"></i>
+        </a>
+        <div>
+            Piazza Bruxelles 5, 06083 Bastia Umbra PG Italy<br>
+            +39 075 545 1448<br>
+            info@factoryofaith.com
+        </div>
+    </div>
+
+    <!-- 모바일 통합 푸터 -->
+    <div class="footer-mobile">
+        <a href="https://www.instagram.com/formedexpression/" target="_blank">
+            <i class="fa-brands fa-instagram" style="font-size: 20px; margin-bottom: 6px; display: block;"></i>
+        </a>
+        Piazza Bruxelles 5, 06083 Bastia Umbra PG Italy &nbsp;|&nbsp;
+        +39 075 545 1448 &nbsp;|&nbsp;
+        info@factoryofaith.com<br>
+        FACTORY OF FAITH SRL &nbsp;|&nbsp;
+        P.IVA & C.F. IT02470851201<br>
+        Sede Legale : Via A. Costa 228, 40134 Bologna BO Italy<br>
+        Iscritta al registro delle Imprese di Bologna | Iscrizione n. 02470851201
+    </div>
+</body>
+</html>
